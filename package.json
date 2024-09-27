@@ -1,0 +1,28 @@
+{
+	"name": "api-node-predict",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/server.ts",
+	"scripts": {
+		"dev": "pnpm prisma generate && pnpm prisma migrate dev && tsx src/server.ts",
+		"build": "tsup src/server.ts --format esm,cjs --dts",
+		"start": "node dist/server.js",
+		"docker:dev": "docker compose -f docker-compose.dev.yml up",
+		"docker:prod": "docker compose -f docker-compose.prod.yml up --build -d"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@prisma/client": "^5.20.0",
+		"fastify": "^5.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.2",
+		"@types/node": "^22.7.3",
+		"prisma": "^5.20.0",
+		"tsup": "^8.3.0",
+		"tsx": "^4.19.1",
+		"typescript": "^5.6.2"
+	}
+}
